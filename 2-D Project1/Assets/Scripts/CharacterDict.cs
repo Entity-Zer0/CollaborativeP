@@ -1,24 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterDict : MonoBehaviour
 {
-    public static CharacterMovement Instance;
+    public static CharacterDict Instance;
 
     public GameObject player;
     public float speed = 0.5f;
 
-    public List<string> myInventory;
+    public Dictionary<string, int> myInvDict = new Dictionary<string, int>();
 
-    public bool doorLocked = true;
-    public bool inventoryFull = false;
-
+    public TextMeshProUGUI inventoryDisplay;
 
     // Start is called before the first frame update
     public void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
@@ -32,16 +32,13 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
-        //myInventory.RemoveAt(3);
-        //myInventory.Count
-
-       
+        myInvDict.Add("Wand", 1);
+        DisplayInventory();
+        
     }
-
 
     // Update is called once per frame
     void Update()
@@ -69,41 +66,18 @@ public class CharacterMovement : MonoBehaviour
             player.transform.position += Vector3.right * speed;
             //Debug.Log("D Pressed");
         }
-
-       /* if(myInventory.Count >= 3)
-        {
-            inventoryfull = true;
-        }
-
-        if (myInventory.Count < 3)
-        {
-            inventoryfull = false;
-        }*/
-
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void DisplayInventory()
     {
-        /*if (collision.gameObject.tag == "Key")
+        inventoryDisplay.text = "Inventory\n\n";
+        foreach (var item in myInvDict)
         {
-            Destroy(collision.gameObject);
-        }*/
-
-        if (collision.gameObject.tag == "Death")
-        {
-            Destroy(player);
+            inventoryDisplay.text += "Item: " + item.Key + ": " + item.Value + "\n";
         }
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
 
-    public void addItem(string item)
-    {
-        myInventory.Add(item);
-    }
+
 }
