@@ -68,6 +68,19 @@ public class CharacterDict : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        /*if (collision.gameObject.tag == "Key")
+        {
+            Destroy(collision.gameObject);
+        }*/
+
+        if (collision.gameObject.tag == "Death")
+        {
+            Destroy(player);
+        }
+    }
+
     public void DisplayInventory()
     {
         inventoryDisplay.text = "Inventory\n\n";
@@ -75,9 +88,14 @@ public class CharacterDict : MonoBehaviour
         {
             inventoryDisplay.text += "Item: " + item.Key + ": " + item.Value + "\n";
         }
+
+        
     }
 
+    
 
 
 
 }
+
+
