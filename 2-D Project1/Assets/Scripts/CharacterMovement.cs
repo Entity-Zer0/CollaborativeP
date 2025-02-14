@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
 
     public bool doorLocked = true;
     public bool inventoryFull = false;
+    
 
 
     // Start is called before the first frame update

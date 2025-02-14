@@ -10,10 +10,13 @@ public class CharacterDict : MonoBehaviour
 
     public GameObject player;
     public float speed = 0.5f;
+    public int manaBar = 1;
 
     public Dictionary<string, int> myInvDict = new Dictionary<string, int>();
 
     public TextMeshProUGUI inventoryDisplay;
+    public TextMeshProUGUI manaDisplay;
+
 
     // Start is called before the first frame update
     public void Awake()
@@ -35,9 +38,10 @@ public class CharacterDict : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myInvDict.Add("Wand", 1);
+        //myInvDict.Add("Wand", 1);
         DisplayInventory();
-        
+        DisplayMana();
+
     }
 
     // Update is called once per frame
@@ -86,13 +90,24 @@ public class CharacterDict : MonoBehaviour
         inventoryDisplay.text = "Inventory\n\n";
         foreach (var item in myInvDict)
         {
-            inventoryDisplay.text += "Item: " + item.Key + ": " + item.Value + "\n";
+            inventoryDisplay.text += " " + item.Key + ": " + item.Value + "\n";
         }
 
         
     }
 
-    
+    public void DisplayMana()
+    {
+        manaDisplay.text = "Mana = " + manaBar;
+        //foreach (var item in myInvDict)
+        {
+            //manaDisplay.text += " " + item.Key + ": " + item.Value + "\n";
+        }
+
+
+    }
+
+
 
 
 
