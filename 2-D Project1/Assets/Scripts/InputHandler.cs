@@ -22,6 +22,8 @@ public class InputHandler : MonoBehaviour
         Debug.Log(rayHit.collider.gameObject.name);
     }
 
+   
+
     // Start is called before the first frame update
     void Start()
     {

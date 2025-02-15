@@ -10,7 +10,7 @@ public class CharacterDict : MonoBehaviour
 
     public GameObject player;
     public float speed = 0.5f;
-    public int manaBar = 1;
+    public int manaBar = 2;
 
     public Dictionary<string, int> myInvDict = new Dictionary<string, int>();
 
