@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    public int manaBar = 2;
+    public int manaBar = 3;
 
     public void OnMouseDown() 
     {
         Destroy(gameObject);
     }
+
+
 
     // Start is called before the first frame update
     void Start()

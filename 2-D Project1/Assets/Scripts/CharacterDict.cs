@@ -10,7 +10,7 @@ public class CharacterDict : MonoBehaviour
 
     public GameObject player;
     public float speed = 0.5f;
-    public int manaBar = 2;
+    public int manaBar;
 
     public Dictionary<string, int> myInvDict = new Dictionary<string, int>();
 
@@ -84,6 +84,7 @@ public class CharacterDict : MonoBehaviour
             Destroy(player);
         }
     }
+    
 
     public void DisplayInventory()
     {
@@ -98,7 +99,7 @@ public class CharacterDict : MonoBehaviour
 
     public void DisplayMana()
     {
-        manaDisplay.text = "Mana = " + manaBar;
+        manaDisplay.text = "Mana: " + manaBar;
         //foreach (var item in myInvDict)
         {
             //manaDisplay.text += " " + item.Key + ": " + item.Value + "\n";
