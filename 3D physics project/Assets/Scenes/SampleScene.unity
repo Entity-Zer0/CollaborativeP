@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123990092}
   m_LocalRotation: {x: 0.1957159, y: -0.17111683, z: 0.03470477, w: 0.9649922}
-  m_LocalPosition: {x: 0.39, y: 1.9499999, z: -9.55}
+  m_LocalPosition: {x: -0.11, y: 1.9499999, z: -9.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 802664983}
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dea9d33b219519458c52ea67ce564ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayer: {fileID: 0}
+  myPlayer: {fileID: 1668721792}
   highScoreDisplay: {fileID: 0}
   scoreDisplay: {fileID: 233373316}
   endTime: 15
@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0.5, y: 1, z: -1}
+  ShoulderOffset: {x: 0, y: 1, z: -1}
   VerticalArmLength: 0.4
   CameraSide: 1
   CameraDistance: 2
@@ -2471,7 +2471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39, y: 1.9499999, z: -9.55}
+  m_LocalPosition: {x: -0.11, y: 1.9499999, z: -9.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3835,8 +3835,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533825203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.1, y: 19.2, z: 115.1}
-  m_LocalScale: {x: 10, y: 50, z: 250}
+  m_LocalPosition: {x: 15, y: 19.2, z: 115.1}
+  m_LocalScale: {x: 15, y: 50, z: 250}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -4134,13 +4134,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668721790}
   serializedVersion: 2
-  m_Mass: 4
+  m_Mass: 1
   m_Drag: 1
-  m_AngularDrag: 100
-  m_UseGravity: 0
+  m_AngularDrag: 5
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1668721792
 MonoBehaviour:
@@ -4154,7 +4154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc41462018ee43648aa8f5ae6b6b6868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 5
   score: 0
 --- !u!65 &1668721793
 BoxCollider:
