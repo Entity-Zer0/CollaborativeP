@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    public int manaBar = 3;
+    public CharacterDict player;
 
     public void OnMouseDown() 
     {
-        Destroy(gameObject);
+        if (player.manaBar > 0)
+        {
+            Destroy(gameObject);
+        }
+        --player.manaBar;
+        player.DisplayMana();
     }
 
 
@@ -16,7 +21,7 @@ public class Destroy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<CharacterDict>();
     }
 
     // Update is called once per frame

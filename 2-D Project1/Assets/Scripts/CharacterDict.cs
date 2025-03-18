@@ -10,7 +10,7 @@ public class CharacterDict : MonoBehaviour
 
     public GameObject player;
     public float speed = 0.5f;
-    public int manaBar;
+    public int manaBar = 2;
 
     public Dictionary<string, int> myInvDict = new Dictionary<string, int>();
 
@@ -47,6 +47,7 @@ public class CharacterDict : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKey(KeyCode.W))
         {
             player.transform.position += Vector3.up * speed;
@@ -69,6 +70,12 @@ public class CharacterDict : MonoBehaviour
         {
             player.transform.position += Vector3.right * speed;
             //Debug.Log("D Pressed");
+        }
+
+        if (manaBar < 0)
+        {
+            manaBar = 0;
+            DisplayMana();
         }
     }
 
