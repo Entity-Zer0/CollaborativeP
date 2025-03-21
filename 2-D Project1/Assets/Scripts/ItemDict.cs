@@ -49,6 +49,7 @@ public class ItemDict : MonoBehaviour
             myPlayer.myInvDict.Add(itemName, itemNumber);
         }
         myPlayer.DisplayInventory();
+
     }
 
     public void Interact()
